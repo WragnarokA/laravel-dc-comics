@@ -25,6 +25,9 @@ return new class extends Migration
             $table->string("type", 20);
             $table->string("artists");
             $table->string("writers");
+
+
+            $table->timestamps();
         });
     }
 
