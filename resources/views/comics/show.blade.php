@@ -11,8 +11,9 @@
           <p class="card-text">{{$comic->description}}</p>
           <a href="{{ route("home")}}" class="btn btn-primary">Torna alla lista dei Comics</a>
         </div>
-      </div>
-
+    </div>
+    <a href="{{ route("comics.create")}}" class="btn btn-primary m-4">Torna al Create</a>
 
 </div>
+
 @endsection
