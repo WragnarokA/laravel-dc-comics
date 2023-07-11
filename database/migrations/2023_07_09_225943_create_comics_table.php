@@ -18,13 +18,13 @@ return new class extends Migration
 
             $table->string("title", 50);
             $table->text("description")->nullable();
-            $table->string("thumb")->nullable();
+            $table->text("thumb")->nullable();
             $table->string("price");
             $table->string("series");
             $table->date("sale_date");
             $table->string("type", 20);
-            $table->string("artists");
-            $table->string("writers");
+            $table->string("artists")->nullable();
+            $table->string("writers")->nullable();
 
 
             $table->timestamps();
