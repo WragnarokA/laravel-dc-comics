@@ -72,12 +72,12 @@ class ComicController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Comics  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comics $comic)
     {
-        //
+        return view("comics.edit", compact("comic"));
     }
 
     /**
@@ -87,19 +87,33 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comics $comic)
     {
-        //
+        $data = $request->all();
+
+
+        $comic->title = $data['title'];
+        $comic->description = $data['description'];
+        $comic->thumb = $data['thumb'];
+        $comic->price = $data['price'];
+        $comic->series = $data['series'];
+        $comic->sale_date = $data['sale_date'];
+        $comic->type = $data['type'];
+        $comic->save();
+
+        return "ok";
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Comics   $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comics $comic)
     {
-        //
+        $comic->delete();
+
+        return redirect()->route('comics.index',);
     }
 }

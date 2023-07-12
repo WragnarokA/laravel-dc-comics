@@ -12,7 +12,15 @@
           <a href="{{ route("home")}}" class="btn btn-primary">Torna alla lista dei Comics</a>
         </div>
     </div>
-    <a href="{{ route("comics.create")}}" class="btn btn-primary m-4">Torna al Create</a>
+    <a href="{{ route("comics.create")}}" class="btn btn-primary m-4">Vai al Create</a>
+    <a href="{{ route("comics.edit", $comic)}}" class="btn btn-primary m-4">Modifica</a>
+
+    <form action="{{ route('comics.destroy', $comic) }}" method="post"">
+      @csrf
+      @method('DELETE')
+      <input class="btn btn-danger m-4" type="submit" value="Cancella">
+    </form>
+
 
 </div>
 
