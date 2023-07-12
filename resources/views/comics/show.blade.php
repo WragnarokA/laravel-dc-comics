@@ -9,6 +9,9 @@
         <div class="card-body">
           <h5 class="card-title">{{$comic->title}}</h5>
           <p class="card-text">{{$comic->description}}</p>
+          <p class="card-text">{{$comic->series}}</p>
+          <p class="card-text">{{$comic->sale_date}}</p>
+          <p class="card-text">{{$comic->price}}</p>
           <a href="{{ route("home")}}" class="btn btn-primary">Torna alla lista dei Comics</a>
         </div>
     </div>
